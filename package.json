@@ -42,5 +42,9 @@
     "redux": "^4.0.1",
     "redux-shortcuts": "0.0.3",
     "uuid": "^3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alastairzotos/webcards-editor"
   }
 }
