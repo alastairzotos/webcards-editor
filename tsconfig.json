@@ -1,0 +1,20 @@
+{
+    "exclude": [
+        "node_modules",
+        "dist"
+    ],
+    "compilerOptions": {
+        "declaration": true,
+        "moduleResolution": "node",
+        "target": "es5",
+        "lib": [
+            "dom",
+            "es7"
+        ],
+        "jsx": "react",
+        "noImplicitAny": false,
+        "outDir": "dist",
+        "rootDir": "src",
+        "sourceMap": false
+    }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "webcards-editor",
+  "version": "1.0.5",
+  "description": "A React WYSIWYG page editor",
+  "main": "dist/editor/editor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "page-builder",
+    "layout-builder",
+    "page-editor",
+    "layout-editor",
+    "react-page-builder",
+    "react-page-editor",
+    "react-layout-builder",
+    "react-layout-editor"
+  ],
+  "author": "Alastair Zotos",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^3.0.2",
+    "@material-ui/lab": "^4.0.0-alpha.19",
+    "@material-ui/styles": "^4.2.0",
+    "classnames": "^2.2.6",
+    "es6-promise": "^4.2.8",
+    "jss": "^9.7.0",
+    "markdown": "^0.5.0",
+    "normalize-scroll-left": "^0.2.0",
+    "parse-color": "^1.0.0",
+    "rc-slider": "^8.6.13",
+    "react": "^16.8.6",
+    "react-color": "^2.17.3",
+    "react-dom": "^16.8.6",
+    "react-dropzone-uploader": "^2.10.1",
+    "react-jss": "^8.6.1",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-tap-event-plugin": "^3.0.3",
+    "reactcss": "^1.2.3",
+    "redux": "^4.0.1",
+    "redux-shortcuts": "0.0.3",
+    "uuid": "^3.3.2"
+  }
+}
