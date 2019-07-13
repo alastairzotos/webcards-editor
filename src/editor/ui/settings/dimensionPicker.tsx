@@ -255,10 +255,10 @@ export default class DimensionPicker extends React.Component<IDimensionPickerPro
 
                     <div className="wc-dimension-picker-number-span">
                         <div className="wc-dimension-picker-number-container" onClick={this.incNumber}>
-                            <ArrowDropUp style={{ fontSize: "12px", marginTop: "-6px", marginBottom: "-6px" }} />
+                            <ArrowDropUp style={{ fontSize: "12px", paddingBottom: "6px" /*, marginTop: "-6px", marginBottom: "-6px"*/ }} />
                         </div>
                         <div className="wc-dimension-picker-number-container" onClick={this.decNumber}>
-                            <ArrowDropDown style={{ fontSize: "12px", marginTop: "-6px", marginBottom: "-6px" }} />
+                            <ArrowDropDown style={{ fontSize: "12px", paddingBottom: "6px" /*, marginTop: "-6px", marginBottom: "-6px"*/ }} />
                         </div>
                     </div>
 

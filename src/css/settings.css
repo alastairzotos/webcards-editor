@@ -3,9 +3,13 @@
 
     border: 1px solid #666666;
     background-color: #333333;
-    padding: 2px;
+    padding-left: 2px;
     height: 24px;
     color: white;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .wc-dimension-picker-error {
@@ -14,9 +18,15 @@
 
 .wc-dimension-picker-input-span {
     display: inline-block;
-    width: calc(100% - 32px);
-    width: -webkit-calc(100% - 32px);
+    width: calc(100% - 40px);
+    width: -webkit-calc(100% - 40px);
     height: 20px;
+
+    vertical-align: top;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .wc-dimension-picker-input {
@@ -29,8 +39,14 @@
 
 .wc-dimension-picker-unit-span {
     display: inline-block;
-    margin-top: -10px;
     width: 15px;
+
+    margin-left: 3px;
+    vertical-align: top;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .wc-dimension-picker-unit {
@@ -41,11 +57,22 @@
     border: none;
     color: white;
     width: 15px;
+    height: 20px;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .wc-dimension-picker-number-span {
     display: inline-block;
     width: 15px;
+
+    vertical-align: top;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .wc-dimension-picker-number-container {
@@ -53,8 +80,13 @@
     width: 15px;
     text-align: center;
     cursor: pointer;
-    margin-top: -1px;
-    padding-top: 4px;
+    padding-top: 0;
+
+    vertical-align: top;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .wc-dimension-picker-number-container:hover {

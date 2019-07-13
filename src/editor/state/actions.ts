@@ -164,25 +164,25 @@ export interface IEditorReduxState {
     undoableChanges: content.ContentItem[];
 }
 
-const defaultState: IEditorReduxState = {
-    editorMode: EditMode.EDIT,
-    editorAddDrawerOpen: false,
-
-    editTargets: [],
-    movingItem: null,
-    selectedItem: null,
-    resizingColumn: null,
-
-    content: content.getDefaultContent(),
-
-    undoableChanges: []
+export const createDefaultState = (initial?: content.ContentItem[], offset?: number): IEditorReduxState => {
+    return {
+        editorMode: EditMode.EDIT,
+        editorAddDrawerOpen: false,
+    
+        editTargets: [],
+        movingItem: null,
+        selectedItem: null,
+        resizingColumn: null,
+    
+        content: content.getDefaultContent(initial, offset),
+    
+        undoableChanges: []
+    };
 };
-
-defaultState.undoableChanges.push(content.deepCopyWithNewId(defaultState.content));
 
 
 // This runs before the actual reducer. The actual reducer takes the new state and makes some updates that always have to happen
-const beforeEditorReducer = (state: IEditorReduxState = defaultState, action: IActionType): IEditorReduxState => {
+const beforeEditorReducer = (state: IEditorReduxState, action: IActionType): IEditorReduxState => {
 
     switch (action.type) {
 
@@ -362,7 +362,7 @@ const beforeEditorReducer = (state: IEditorReduxState = defaultState, action: IA
 
 // The actual reducer
 // Here we collect all the undoable changes
-export const editorReducer = (state: IEditorReduxState = defaultState, action: IActionType): IEditorReduxState => {
+export const editorReducer = (state: IEditorReduxState, action: IActionType): IEditorReduxState => {
 
     let newState = beforeEditorReducer(state, action);
 
@@ -375,3 +375,4 @@ export const editorReducer = (state: IEditorReduxState = defaultState, action: I
 
     return newState;
 };
+

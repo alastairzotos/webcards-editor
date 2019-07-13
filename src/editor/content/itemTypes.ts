@@ -125,7 +125,7 @@ export const ItemTypes: { [key: string]: ItemType } = {
         edittable: true,
 
         generateDefault: (children?: content.ContentItem[], options?: content.ContentData) => {
-            return content.generateDefault("row", [
+            return content.generateDefault("row", null, [
                 content.createContainerItem("column", { className: "col-6", span: 6, style: { padding: "10px" } }, []),
                 content.createContainerItem("column", { className: "col-6", span: 6, style: { padding: "10px" } }, [])
             ]);
@@ -141,7 +141,7 @@ export const ItemTypes: { [key: string]: ItemType } = {
         edittable: true,
 
         generateDefault: (children?: content.ContentItem[], options?: content.ContentData) => {
-            return content.generateDefault("row", [
+            return content.generateDefault("row", null, [
                 content.createContainerItem("column", { className: "col-4", span: 4, style: { padding: "10px" } }, []),
                 content.createContainerItem("column", { className: "col-4", span: 4, style: { padding: "10px" } }, []),
                 content.createContainerItem("column", { className: "col-4", span: 4, style: { padding: "10px" } }, [])
@@ -158,7 +158,7 @@ export const ItemTypes: { [key: string]: ItemType } = {
         edittable: true,
 
         generateDefault: (children?: content.ContentItem[], options?: content.ContentData) => {
-            return content.generateDefault("row", [
+            return content.generateDefault("row", null, [
                 content.createContainerItem("column", { className: "col-3", span: 3, style: { padding: "10px" } }, []),
                 content.createContainerItem("column", { className: "col-3", span: 3, style: { padding: "10px" } }, []),
                 content.createContainerItem("column", { className: "col-3", span: 3, style: { padding: "10px" } }, []),
@@ -184,10 +184,10 @@ export const ItemTypes: { [key: string]: ItemType } = {
 
                     // Header
                     content.createContainerItem("container", { style: { backgroundColor: "#dedede", padding: "10%" }}, [
-                        content.generateDefault("row", [
+                        content.generateDefault("row", null, [
                             content.createContainerItem("column", { className: "col-6", span: 6, style: {} }, [
-                                content.generateDefault("text", [], { text: "Welcome", variant: "h1", style: {} }),
-                                content.generateDefault("text", [], { variant: "h4", text: "Thank you for visiting my website", style: { color: "#555555" } })
+                                content.generateDefault("text", { text: "Welcome", variant: "h1", style: {} }),
+                                content.generateDefault("text", { variant: "h4", text: "Thank you for visiting my website", style: { color: "#555555" } })
                             ])
                         ])
                     ]),
@@ -196,31 +196,31 @@ export const ItemTypes: { [key: string]: ItemType } = {
                     content.createContainerItem("container", { style: { padding: "30px", backgroundColor: "#ffffff" } }, [
 
                         content.createContainerItem("container", { style: { textAlign: "center" }}, [
-                            content.generateDefault("text", [], { variant: "h2", text: "About Me", style: {} }),
+                            content.generateDefault("text", { variant: "h2", text: "About Me", style: {} }),
 
-                            content.generateDefault("text", [], { variant: "p", style: {}, text: "Lorem ipsum dolor sit amet, libris facilisi partiendo ad vix, cu iisque maluisset cum. Pertinax repudiare vim te, nec cu vide singulis, id iusto phaedrum platonem vis. Scripta facilisis delicatissimi eos ei, animal delectus expetendis an est. Lobortis persequeris definitiones vis no." })
+                            content.generateDefault("text", { variant: "p", style: {}, text: "Lorem ipsum dolor sit amet, libris facilisi partiendo ad vix, cu iisque maluisset cum. Pertinax repudiare vim te, nec cu vide singulis, id iusto phaedrum platonem vis. Scripta facilisis delicatissimi eos ei, animal delectus expetendis an est. Lobortis persequeris definitiones vis no." })
                         ]),
                     ]),
 
                     // Footer
                     content.createContainerItem("container", { style: { padding: "20px", backgroundColor: "#333333" } }, [
-                        content.generateDefault("row", [
+                        content.generateDefault("row", null, [
 
                             content.createContainerItem("column", { className: "col-4", span: 4, style: { padding: "10px" } }, [
                                 content.createContainerItem("container", { style: {} }, [
-                                    content.generateDefault("text", [], { variant: "h3", text: "Sitemap", style: { color: "white" } }),
-                                    content.generateDefault("text", [], { variant: "p", text: "Home", style: { color: "white" } }),
-                                    content.generateDefault("text", [], { variant: "p", text: "About", style: { color: "white" } }),
-                                    content.generateDefault("text", [], { variant: "p", text: "Contact", style: { color: "white" } }),
+                                    content.generateDefault("text", { variant: "h3", text: "Sitemap", style: { color: "white" } }),
+                                    content.generateDefault("text", { variant: "p", text: "Home", style: { color: "white" } }),
+                                    content.generateDefault("text", { variant: "p", text: "About", style: { color: "white" } }),
+                                    content.generateDefault("text", { variant: "p", text: "Contact", style: { color: "white" } }),
                                 ])
                             ]),
 
                             content.createContainerItem("column", { className: "col-4", span: 4, style: {  padding: "10px"} }, [
                                 content.createContainerItem("container", { style: { padding: "5px" } }, [
-                                    content.generateDefault("text", [], { variant: "h3", text: "Social", style: { color: "white" } }),
-                                    content.generateDefault("text", [], { variant: "p", text: "Facebook", style: { color: "white" } }),
-                                    content.generateDefault("text", [], { variant: "p", text: "Instagram", style: { color: "white" } }),
-                                    content.generateDefault("text", [], { variant: "p", text: "Youtube", style: { color: "white" } }),
+                                    content.generateDefault("text", { variant: "h3", text: "Social", style: { color: "white" } }),
+                                    content.generateDefault("text", { variant: "p", text: "Facebook", style: { color: "white" } }),
+                                    content.generateDefault("text", { variant: "p", text: "Instagram", style: { color: "white" } }),
+                                    content.generateDefault("text", { variant: "p", text: "Youtube", style: { color: "white" } }),
                                 ])
                             ]),
 
@@ -263,7 +263,7 @@ export const ItemTypes: { [key: string]: ItemType } = {
         edittable: true,
 
         generateDefault: (children?: content.ContentItem[], options?: content.ContentData) => {
-            return content.createContainerItem("body", { style: { margin: "5px", backgroundColor: "white", minHeight: "calc(100vh - 120px)" } }, children);
+            return content.createContainerItem("body", { style: { margin: "5px", backgroundColor: "white", minHeight: `calc(100vh - ${options ? (options.offset !== undefined ? options.offset : 0) : 0}px)` } }, children);
         },
 
         generateProps: (item: content.ContentItem) => ({

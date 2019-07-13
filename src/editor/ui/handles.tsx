@@ -15,6 +15,8 @@ export const DescriptorHandle: React.SFC<{ item: content.ContentItem, handleDrag
             color: "white",
             padding: "3px",
             backgroundColor: "#305da6",
+
+            fontFamily: '"Lucida Sans Unicode", "Lucida Grande", sans-serif',
             fontSize: "12px",
 
             cursor: "all-scroll"
@@ -52,6 +54,8 @@ export const DragHandle: React.FC<IDragHandleProps> = props => {
                 color: "white",
                 backgroundColor: "rgba(0, 0, 0, 0.8)",
                 textAlign: "center",
+
+                fontFamily: '"Lucida Sans Unicode", "Lucida Grande", sans-serif',
                 fontSize: "12px",
 
                 borderBottomRightRadius: "3px",

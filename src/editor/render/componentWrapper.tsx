@@ -357,10 +357,14 @@ const PureComponentWrapper: React.FC<IComponentWrapperProps> = props => {
     let statusStyle = StatusStyles[editStatus];
 
     // Combine given styles and wrapper styles
-    let compStyle = {
+    let compStyle: React.CSSProperties = {
         ...style,
         ...statusStyle,
 
+        boxSizing: "border-box",
+        MozBoxSizing: "border-box",
+        WebkitBoxSizing: "border-box",
+        
         opacity: state.visible ? 1 : 0,
         position: "relative"    // Needed for overlay handles,
     };
