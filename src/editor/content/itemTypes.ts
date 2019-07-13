@@ -263,7 +263,7 @@ export const ItemTypes: { [key: string]: ItemType } = {
         edittable: true,
 
         generateDefault: (children?: content.ContentItem[], options?: content.ContentData) => {
-            return content.createContainerItem("body", { style: { margin: "5px", backgroundColor: "white", minHeight: `calc(100vh - ${options ? (options.offset !== undefined ? options.offset : 0) : 0}px)` } }, children);
+            return content.createContainerItem("body", { style: { backgroundColor: "white", minHeight: `calc(100vh - ${options ? (options.offset !== undefined ? options.offset : 0) : 0}px)` } }, children);
         },
 
         generateProps: (item: content.ContentItem) => ({

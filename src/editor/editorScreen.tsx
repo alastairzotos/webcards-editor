@@ -211,7 +211,7 @@ const PurePageEditorScreen: React.FC<IPageEditorScreenProps> = props => {
 
             <ItemSettingsEditor />
 
-            <div style={{ margin: "-20px -20px -20px -20px", position: "relative" }}>
+            <div style={{ position: "relative" }}>
                 {props.generator.generate(props.content)}
 
                 {(state.hoverColumn || props.resizingColumn) && (
