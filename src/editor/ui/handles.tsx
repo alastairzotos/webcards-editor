@@ -28,6 +28,7 @@ export const DescriptorHandle: React.SFC<{ item: content.ContentItem, handleDrag
 
 interface IDragHandleProps {
     item: content.ContentItem;
+    pushDown: boolean;
 
     onMouseDown: ()=>void;
     onMouseUp: ()=>void;
@@ -47,8 +48,8 @@ export const DragHandle: React.FC<IDragHandleProps> = props => {
 
             style={{
                 position: "absolute",
-                top: 0,
-                left: 0,
+                top: props.pushDown ? "0px" : "-19px",
+                left: "-1px",
                 padding: "0 3px 3px 0",
                 height: "16px",
                 color: "white",
@@ -58,7 +59,7 @@ export const DragHandle: React.FC<IDragHandleProps> = props => {
                 fontFamily: '"Lucida Sans Unicode", "Lucida Grande", sans-serif',
                 fontSize: "12px",
 
-                borderBottomRightRadius: "3px",
+                //borderBottomRightRadius: "3px",
 
                 cursor: "all-scroll"
             }}

@@ -155,6 +155,15 @@ const mapDispatchToProps = (dispatch, ownProps: IComponentWrapperProps): ICompon
 
 
 let domObjectCache: { [key: string]: HTMLElement } = {};
+const getDOMElemById = (id: string): HTMLElement => {
+    let cached = domObjectCache[id];
+    if (cached === undefined) {
+        cached = document.getElementById(id);
+        domObjectCache[id] = cached;
+    }
+
+    return cached;
+};
 
 const PureComponentWrapper: React.FC<IComponentWrapperProps> = props => {
 
@@ -287,11 +296,7 @@ const PureComponentWrapper: React.FC<IComponentWrapperProps> = props => {
                         if (child.position === movingPosition) continue;
 
                         // Get child rectangle
-                        let cached = domObjectCache[child.id];
-                        if (cached === undefined) {
-                            cached = document.getElementById(child.id);
-                            domObjectCache[child.id] = cached;
-                        }
+                        let cached = getDOMElemById(child.id);
                         const hoverBoundingRect = cached.getBoundingClientRect();
                         let hoverBoundingTop = hoverBoundingRect.top + window.scrollY;
                         let hoverBoundingBottom = hoverBoundingRect.bottom + window.scrollY;
@@ -406,6 +411,7 @@ const PureComponentWrapper: React.FC<IComponentWrapperProps> = props => {
             {isHovered && (
                 <handles.DragHandle
                     item={content}
+                    pushDown={getDOMElemById(content.id).getBoundingClientRect().top <= 0}
 
                     onMouseDown={() => {
                         setState({...state, draggable: true});
@@ -426,7 +432,7 @@ const PureComponentWrapper: React.FC<IComponentWrapperProps> = props => {
 
     // If in preview mode just render the element as it's supposed to look
     if (mode == actions.EditMode.PREVIEW) {
-        return <Component {...compProps}>{children}</Component>;
+        return <Component {...compProps} style={compStyle}>{children}</Component>;
     } else {
 
         // It's not possible to insert the drag and info handles into non-container tags so we have to wrap them

@@ -145,7 +145,7 @@ export const generateRow = (children?: ContainerItem[]): ContainerItem => {
  * @param children The children of the column
  */
 export const generateColumn = (span: IOneToTwelve, children?: ContentItem[]): ContainerItem => {
-    return generateDefault("column", { span: span, style: { } }, children) as ContainerItem;
+    return createContainerItem("column", { span: span, className: "col-" + span, style: { padding: "10px" } }, children) as ContainerItem;
 };
 
 
