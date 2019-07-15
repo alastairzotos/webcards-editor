@@ -13,11 +13,16 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import PageEditor from 'webcards-editor';
+import  *  as  content  from  'webcards-editor/dist/editor/content/content';
 
 ReactDOM.render(
 
 	<PageEditor
-		content={loadedContentFromServer}
+		content={[
+			content.generateContainer([
+				content.generateText("Hello world!", { variant: "h1" })
+			])
+		]}
 		
 		onSave={(items, onComplete) => {
 			saveToServer(items, () => {
@@ -111,7 +116,7 @@ The `PageEditor` component is the main component you'll have to use if all you w
 
 * Like `createContentItem`, this will do the same but return a `ContainerItem` with an array of children attached. This will automatically set the `parent` reference of each child as well as their positions.
 
-**`generateDefault(type: string, data?: ContentData, children?: ContentItem[]): ContentItem`**
+**`generateDefault(type: string, data?: ContentData, children?: ContentItem[])=>ContentItem`**
 
 * Generates a default instance of an `ItemType`, identified by `type`. Unlike `createContentItem` this will do extra things that the `ItemType` wants, such as applying styles or even adding child items.
 
