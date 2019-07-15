@@ -224,7 +224,8 @@ NUMBER|A simple numerical value.
 ---
 
 **`createNumberType(rules?: any)=>ICustomType`**
-A utility to create a type for custom settings.
+
+* A utility to create a type and rules for custom settings.
 
 ---
 
