@@ -28,8 +28,8 @@ ReactDOM.render(
 			saveToServer(items, () => {
 				alert("Save complete!");
 				onComplete();
-			}) 
-		})
+			})
+		}}
 	/>,
 	
 	document.getElementById("app")
