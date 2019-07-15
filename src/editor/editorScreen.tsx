@@ -71,8 +71,8 @@ const getColumnRect = (page: content.ContentItem, columnDOM: HTMLElement): Rect 
     let pageDom = getDomElement(page.id).getBoundingClientRect();
 
     return {
-        top: boundingRect.top - pageDom.top,
-        bottom: boundingRect.bottom - pageDom.top,
+        top: boundingRect.top - pageDom.top + 30,
+        bottom: boundingRect.bottom - pageDom.top + 30,
         left: boundingRect.left - pageDom.left,
         right: boundingRect.right - pageDom.left,
         width: boundingRect.width,
