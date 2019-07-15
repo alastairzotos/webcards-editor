@@ -13,6 +13,8 @@ import TextSettingsEditor from './ui/textSettingsEditor';
 import ItemSettingsEditor from './ui/settings/itemSettingsEditor';
 import Resizer from './ui/resizer';
 
+import Toolbar from './ui/toolbar';
+
 
 interface IPageEditorScreenProps {
     content: content.ContentItem;
@@ -20,6 +22,8 @@ interface IPageEditorScreenProps {
     resizingColumn: content.ContentItem;
     
     generator: Generator;
+
+    onSave?: (items: content.ContentItem, onComplete: ()=>void)=>void;
 
     onClickBody?: ()=>void;
     stopColumnResize: ()=>void;
@@ -91,14 +95,18 @@ const PurePageEditorScreen: React.FC<IPageEditorScreenProps> = props => {
         hoverColumn: content.ContentItem,
         hoverColumnDom: HTMLElement,
         hoverColumnDomRect: Rect,
-        visible: boolean
+        visible: boolean,
+
+        saving: boolean
     };
 
     const [state, setState] = React.useState<IEditorScreenState>({
             hoverColumn: null,
             hoverColumnDom: null,
             hoverColumnDomRect: null,
-            visible: false
+            visible: false,
+
+            saving: false
         });
 
     let nearestColumn = props.editTargets.slice().reverse().find(cnt => cnt.type.id == "column");
@@ -212,6 +220,19 @@ const PurePageEditorScreen: React.FC<IPageEditorScreenProps> = props => {
             <ItemSettingsEditor />
 
             <div style={{ position: "relative" }}>
+                <Toolbar onSave={cb => {
+                    if (props.onSave) {
+
+                        setState({...state, saving: true});
+                        props.onSave(props.content, () => {
+                            setState({...state, saving: false});
+                            cb();
+                        });
+                    } else {
+                        cb();
+                    }
+                }} />
+
                 {props.generator.generate(props.content)}
 
                 {(state.hoverColumn || props.resizingColumn) && (
@@ -222,6 +243,8 @@ const PurePageEditorScreen: React.FC<IPageEditorScreenProps> = props => {
                         visible={state.visible}
                     />
                 )}
+
+                {state.saving && <div style={{position: "absolute", top: 30, left: 0, width: "100%", height: "100%", opacity: 0 }}></div>}
             </div>
 
             <ActionPicker />

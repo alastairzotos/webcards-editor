@@ -411,7 +411,7 @@ const PureComponentWrapper: React.FC<IComponentWrapperProps> = props => {
             {isHovered && (
                 <handles.DragHandle
                     item={content}
-                    pushDown={getDOMElemById(content.id).getBoundingClientRect().top <= 0}
+                    pushDown={getDOMElemById(content.id).getBoundingClientRect().top <= 30} // Ugly magic number. 30 = height of toolbar
 
                     onMouseDown={() => {
                         setState({...state, draggable: true});

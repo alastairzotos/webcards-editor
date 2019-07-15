@@ -12,6 +12,8 @@ import PageEditorScreen from './editorScreen';
 interface IEditorProps {
     content?: content.ContentItem[];
     bodyOffset?: number;
+
+    onSave?: (items: content.ContentItem, onComplete: ()=>void)=>void;
 }
 
 interface IEditorState {
@@ -40,6 +42,11 @@ export default class PageEditor extends React.Component<IEditorProps, IEditorSta
             <Provider store={this._store}>
                 <PageEditorScreen
                     generator={this._generator}
+                    onSave={(items, cb) => {
+                        if (this.props.onSave) {
+                            this.props.onSave(items, cb);
+                        }
+                    }}
                 />
             </Provider>
         );
