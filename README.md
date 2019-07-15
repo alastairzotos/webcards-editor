@@ -202,6 +202,7 @@ This is a data point that can be manipulated by the custom settings controls. It
 ---
 
 **interface `CustomTypeSetting`**
+
 |Property|Type|Required|Description|
 |--|--|--|--|
 |title|`string`|Required|The human readable name of the setting.
@@ -211,6 +212,7 @@ This is a data point that can be manipulated by the custom settings controls. It
 ---
 
 **interface `CustomTypeSettings`**
+
 |Property|Type|Required|Description|
 |--|--|--|--|
 |props|`CustomTypeSetting[]`|Required|An array of custom settings for this type.
@@ -232,7 +234,8 @@ export  const  ColumnCustomSettings:  CustomTypeSettings  = {
 		// The 'span' property of the item's ContentData.
 		// This will create a slider in the right drawer
 		// with the range between 1 and 12, stepping 1 at a time.
-		// Moving this slider will automatically update the span of the column
+		// Moving this slider will
+		 automatically update the span of the column
 		{
 			title:  "Span",
 			prop:  "span",
