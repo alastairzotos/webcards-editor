@@ -230,6 +230,7 @@ NUMBER|A simple numerical value.
 ---
 
 **Example**
+
 Below is an example of how custom type settings can be implemented. This particular example is used to change the column span of a column.
 
 ```ts
@@ -240,7 +241,7 @@ export  const  ColumnCustomSettings:  CustomTypeSettings  = {
 		// This will create a slider in the right drawer
 		// with the range between 1 and 12, stepping 1 at a time.
 		// Moving this slider will
-		 automatically update the span of the column
+		// automatically update the span of the column
 		{
 			title:  "Span",
 			prop:  "span",
