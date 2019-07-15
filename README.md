@@ -81,6 +81,7 @@ As above, it is not recommended to create these objects manually. Use the utilit
 
 
 **interface `ContentData`**
+
 |Property|Type|Required|Description|
 |--|--|--|--|
 |style|CSSProperties|Required|React CSS properties
