@@ -185,7 +185,8 @@ generateProps|`(item: ContentItem)=>any`|Optional|Generates HTML attributes for 
 
 **enum `TypeTag`**
 
-This is a the type of data that a custom setting can manipulate.
+* This is a the type of data that a custom setting can manipulate.
+
 |Property|Description|
 |--|--|
 NUMBER|A simple numerical value.
@@ -193,7 +194,7 @@ NUMBER|A simple numerical value.
 ---
 
 **interface `ICustomType`**
-This is a data point that can be manipulated by the custom settings controls. It includes the type of data that can be manipulated, such as `NUMBER`, and any rules associated with the setting of that data.
+* This is a data point that can be manipulated by the custom settings controls. It includes the type of data that can be manipulated, such as `NUMBER`, and any rules associated with the setting of that data.
 
 |Property|Type|Required|Description|
 |--|--|--|--|
@@ -203,6 +204,8 @@ This is a data point that can be manipulated by the custom settings controls. It
 ---
 
 **interface `CustomTypeSetting`**
+
+* A custom setting as it will be seen in the UI. This includes its name, the property that you want to control and any rules about how that property is controlled.
 
 |Property|Type|Required|Description|
 |--|--|--|--|
