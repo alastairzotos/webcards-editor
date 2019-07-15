@@ -54,6 +54,7 @@ The API is currently still in development and there may be some breaking changes
 
 
 **PageEditor**
+
 `import  PageEditor  from  'webcards-editor';`
 
 The `PageEditor` component is the main component you'll have to use if all you want is to implement a simple page editor. This is the component responsible for loading content from the server into the editor and saving content from the editor to the server. All the details are handled by this component.
@@ -152,7 +153,7 @@ The `PageEditor` component is the main component you'll have to use if all you w
 |id|`string`|Required|A unique ID for the item type, e.g. "text". This is used when calling `content.createItemType()`.
 |name|`string`|Required|A human-friendly name which will be displayed in the left item list drawer.
 |desc|`string`|Required|A human-friendly description which will be displayed when hovering over the handle in the left item list drawer.
-|validChildren|`string|string[]`|Optional|A list of valid children that the item can contain. Use `*` for all types.
+|validChildren|`string or string[]`|Optional|A list of valid children that the item can contain. Use `*` for all types.
 |invalidChildren|`string[]`|Optional|For some items it's easier to specify what they *can't* contain. For example, `container` can't contain `column` as only `row` can contain items of type `column`.
 edittable|`boolean`|Required|Whether the item can be edited or not.
 customTypeSettings|`CustomTypeSettings`|Optional|Additional settings for the type. These will generate controls in the right settings drawer. (See **custom**).
